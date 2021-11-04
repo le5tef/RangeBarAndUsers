@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <RangeBar :max-width="'510px'" v-model="value" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RangeBar from "./components/RangeBar.vue";
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      value: 20,
+    };
+  },
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    RangeBar,
+  },
+};
 </script>
 
 <style>
+body {
+  background-color: #23283e;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
   margin-top: 60px;
 }
 </style>
