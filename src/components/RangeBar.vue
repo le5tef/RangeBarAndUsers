@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ inputValue }}%</h1>
-    <div class="slide-container" :style="{ maxWidth }">
+    <div class="slide-container">
       <div class="slider" ref="slider">
         <div
           @mousedown="startDrag($event)"
@@ -24,10 +24,6 @@ export default {
   props: {
     value: {
       type: Number,
-    },
-    maxWidth: {
-      type: String,
-      default: "510px",
     },
   },
   data() {
@@ -87,7 +83,7 @@ export default {
 .slider {
   padding: 5px 35px 5px 5px;
 
-  height: 30px;
+  height: 40px;
   background: linear-gradient(
     90deg,
     rgba(52, 255, 198, 1) 0%,

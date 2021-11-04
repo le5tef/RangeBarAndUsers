@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <RangeBar :max-width="'510px'" v-model="value" />
-  </div>
+  <v-app id="app">
+    <v-main>
+      <v-btn
+        class="mt-10 mt-md-0"
+        :fixed="$vuetify.breakpoint.mdAndUp"
+        left
+        top
+        x-large
+        :to="{ name: 'Home' }"
+        v-if="$route.name != 'Home'"
+        >Домой
+      </v-btn>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import RangeBar from "./components/RangeBar.vue";
-
+import { mapActions } from "vuex";
 export default {
   data() {
-    return {
-      value: 20,
-    };
+    return {};
   },
   name: "App",
-  components: {
-    RangeBar,
+  components: {},
+  mounted() {
+    this.fetchUsers();
+  },
+  methods: {
+    ...mapActions("users", ["fetchUsers"]),
   },
 };
 </script>
 
 <style>
 body {
-  background-color: #23283e;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -30,6 +42,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  margin-top: 60px;
+  background-color: #23283e;
 }
 </style>
