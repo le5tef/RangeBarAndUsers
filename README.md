@@ -1,4 +1,4 @@
-# techtask
+# Range Input and Users from API
 
 ## Project setup
 ```
